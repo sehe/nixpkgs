@@ -14,6 +14,7 @@
   makeWrapper,
   openssl,
   stdenv,
+  bashInteractive,
 }:
 let
   version = "2.49.1525";
@@ -75,6 +76,7 @@ stdenv.mkDerivation {
             --prefix PATH : "$dotnetDir" \
             --prefix PATH : "${
               lib.makeBinPath [
+                bashInteractive
                 alsa-utils
                 cifs-utils
                 ffmpeg
